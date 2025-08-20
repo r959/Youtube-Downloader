@@ -26,11 +26,11 @@ body.custom {
 .logo-title {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .logo {
-  height: 40px; /* Adjust size */
+  height: 60px; /* Adjust size */
   width: auto;
 }
 
