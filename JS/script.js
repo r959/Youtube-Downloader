@@ -18,3 +18,12 @@ cards.forEach(c=>obs.observe(c));
 document.getElementById('downloadBtn').addEventListener('click', () => {
   window.location.href = "https://github.com/r959/Youtube-Downloader/releases/download/V1.0/YTDownloaderSetup.exe";
 });
+
+window.onload = () => {
+  const savedTheme = localStorage.getItem("theme") || "light";
+  setTheme(savedTheme);
+
+  // Add fade-in class
+  document.body.classList.add("loaded");
+};
+
