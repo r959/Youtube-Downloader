@@ -1,0 +1,20 @@
+function setTheme(theme) {
+  document.body.className = theme==='dark' ? '' : theme;
+  localStorage.setItem('theme', theme);
+}
+// Load saved or system theme
+const saved = localStorage.getItem('theme');
+if(saved) setTheme(saved);
+else if(window.matchMedia('(prefers-color-scheme: light)').matches) setTheme('light');
+
+// Animate feature cards
+const cards=document.querySelectorAll('.feature-card');
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('visible')});
+},{threshold:.2});
+cards.forEach(c=>obs.observe(c));
+
+// Download button
+document.getElementById('downloadBtn').addEventListener('click',()=>{
+  alert('Download starting... (replace with your installer link)');
+});
